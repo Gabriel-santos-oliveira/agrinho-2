@@ -183,9 +183,6 @@ body.dark-mode header {
 
 body.dark-mode .links a,
 body.dark-mode .links-externos button {
-    background-color: #2e
-body.dark-mode .links a,
-body.dark-mode .links-externos button {
     background-color: #2e7d32;
     color: white;
 }
