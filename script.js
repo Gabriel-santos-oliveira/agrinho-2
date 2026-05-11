@@ -1,4 +1,4 @@
-// Executa após carregar a página
+// Aguardar carregar
 document.addEventListener("DOMContentLoaded", () => {
 
     let tamanho = 16;
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const aumentar = document.getElementById("increase-font");
     const diminuir = document.getElementById("decrease-font");
     const dark = document.getElementById("dark-mode");
+    const topBtn = document.getElementById("topBtn");
 
     // Aumentar fonte
     if (aumentar) {
@@ -32,6 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Mostrar botão topo
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+
+    // Scroll para o topo
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
 });
 
 // Abrir links externos
